@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" style="display: flex; justify-content: center;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title>Hisutu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <style>
+
+        .container1 {
+            margin-top: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow-anchor: auto;
+        }
+
+        .title {
+            color: #FFF;
+            font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 30px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .headButton {
+            border-radius: 100px;
+            border: 2px solid var(--White, #F5F5F5);
+            color: white;
+            background-color: black;
+            font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 16px;
+            padding: 16px 24px;
+            font-weight: 250;
+            letter-spacing: 1px;
+            margin-left: 18px;
+        }
+
+        .headButton.yellow {
+            border-color: var(--Yellow, #F4FF81);
+        }
+
+        .buttonWrapper {
+            display: flex;
+            gap: 20px;
+        }
+        @keyframes shine {
+            to {
+      background-position: 200% center;
+    }
+}
+        .bigTitle {
+            font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background: linear-gradient(to left, #F4FF81 13.44%, #81F5FF 60%, #FFF 100%);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 60px;
+            font-weight: 590;
+            line-height: normal;
+            animation: shine 5s linear infinite alternate ;
+            
+        }
+        
+        .smallTitle {
+            color: #F5F5F5;
+            font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: normal;
+        }
+
+        .textTitle {
+            color: var(--White, #F5F5F5);
+            font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 590;
+            line-height: normal;
+        }
+
+        .example {
+                    color: #F5F5F5;
+                    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 590;
+                    line-height: normal;
+
+                }
+
+                .works {
+                font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                font-size: 60px;
+                font-style: normal;
+                font-weight: 590;
+                line-height: normal;
+                color: #F5F5F5
+            }
+
+            #worksID {
+                border-radius: 100px;
+        border: 1px solid var(--White, #F5F5F5);
+        padding: 16px 30px;
+        width: 64%;
+        margin-top: 7%;
+align-items: center;
+justify-content: center;
+gap: 10px;
+            }
+
+        #analytics {
+            margin-left: 30%; margin-top: 8%; justify-content: center
+        }
+
+        .slider {
+    width: 100%;
+    max-width: 950px;
+    height: 600px;
+    margin: 20px;
+    text-align: center;
+}
+        
+        .swiper-slide {
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+    flex-shrink: 0;
+
+    background: black;
+    scroll-snap-align: center;
+
+        
+}
+
+
+.swiper-pagination-bullet {
+        
+        width: 12px;
+            height: 12px;
+            background-color:rgb(214 211 209);
+            opacity: 0.5; 
+            border-radius: 100%;
+            cursor: pointer;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #F4FF81;
+        color: #F4FF81;
+  opacity: 1;
+    }
+
+.slide-animation {
+  animation-name: slideFromRight;
+  animation-duration: 0.8s; /* Durée de l'animation en secondes */
+  animation-timing-function: linear; /* Fonction de temporisation */
+  animation-fill-mode: forwards; /* Laisse l'élément à sa position finale après l'animation */
+    }
+
+    @keyframes slideFromRight
+  {
+      /* start slide in from right */
+      0% {
+        margin-left:-100%;
+      }
+      /* start slide out to left */
+      33.3333%{
+        margin-left:-66%;
+      }
+      /* end slide out */
+      66.3333%{
+        margin-left:-33%;
+      }
+      100%{
+        margin-left:0%;
+      }
+  }
+
+        .swiper {
+            display: flex;
+            height: 700px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 124px;
+            background-color: black;
+            
+        }
+
+       
+
+        .button-carousel {
+            color: #C0C0C0;
+            font-size: 20px ;
+            line-height: 28px;
+            font-weight: 400;
+            padding: 24px 16px 24px 16px;
+            border-radius: 100px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            display: inline-block;
+            box-shadow: inset 0 0 0 0 yellow;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+
+        }
+
+        .button-carousel-yellow {
+            background-color: yellow;
+            opacity: 1;
+            color: black;
+            box-shadow: inset 0 0 0 0 yellow;
+  -webkit-transition: ease-out 0.6s;
+  -moz-transition: ease-out 0.6s;
+  transition: ease-out 0.6s;
+  box-shadow: inset 400px 0 0 0  yellow
+
+                }
+
+        .button-carousel-yellow:hover {
+            color: black;
+        }
+
+        .button-carousel:hover {
+            opacity: 1;
+            cursor: pointer;
+            color: #C0C0C0;
+
+        }
+
+        @keyframes left {
+    from {
+        box-shadow: inset 0 0 0 0 yellow;
+    }
+    to {
+        box-shadow: inset 300px 0 0 0 yellow;
+    }
+}
+
+@keyframes right {
+    from {
+        box-shadow: inset 300px 0 0 0 yellow;
+    }
+    to {
+        box-shadow: inset 0 0 0 0 yellow;
+    }
+}
+        
+        .tuto {
+            display: flex;
+padding: 16px 24px;
+align-items: center;
+border-radius: 100px;
+width: max-content;
+background: rgba(244, 255, 129, 0.18);
+gap: 12px;
+        }
+
+        .tuto-text {
+        font-size: 30px;
+                font-style: normal;
+font-weight: 590;
+line-height: normal;
+            color: #F5F5F5;
+                    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                  
+    }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+
+            background-color: rgb(214 211 209) ;
+            opacity: 0.5; 
+            border-radius: 100%;
+            cursor: pointer;
+            transition: background-color 0.6s ease;
+
+        }
+
+        .dot-yellow {
+            width: 12px;
+            height: 12px;
+  background-color: #F4FF81;
+  opacity: 1;
+  border-radius: 100%;
+            cursor: pointer;
+            transition: background-color 0.6s ease;
+
+}       
+
+@media screen and (max-width: 798px) {
+    /* Adjustments for smaller screens */
+    .container1 {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .headButton {
+        padding: 8px 12px;
+        margin-left: 0;
+
+    }
+
+    #analytics .headButton {
+        margin-top: 72px;
+    }
+
+    #analytics {
+        margin-left: 0;
+        padding-left: 10%;
+        margin-top: 12%;
+    }
+
+    .container1 .buttonWrapper {
+        display: none;
+    }
+
+    .bigTitle {
+        font-size: 48px;
+    }
+
+    #button-companies {
+        display: none;
+    }
+
+    .smallTitle {
+        font-size: 30px
+    }
+
+    .textTitle {
+        font-size: 28px;
+    }
+
+    .swiper {
+        height: max-content;
+        margin-top: 78px;
+    }
+
+    .swiper-slide {
+        height: 400px;
+        margin-left: 8%;
+        width: 50%;
+        align-items:flex-start;
+        font-size: 20px;
+
+    }
+    .swiper-pagination-bullet {
+        display: none;
+    }
+    #alpha {
+        display: none;
+    }
+    #imageslide {
+        display: none;
+    }
+
+    .swiper-wrapper {
+        display: block;
+    }
+
+    .works {
+        font-size: 40px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #worksID {
+        border: none;
+        width: 80%;
+    }
+
+    .example {
+        font-size: 18px;
+    }
+
+    .tuto {
+        width: fit-content;
+        padding: 8px 12px;
+    }
+
+    .tuto-text {
+        font-size: 20px;
+    }
+    
+
+   }
+
+
+    </style>
+
+<script>
+  
+
+function showDivs(n) {
+    var swiper = document.querySelector(".mySwiper").swiper;
+  var btn = document.getElementsByClassName("button-carousel");
+  for (var i = 0; i < btn.length; i++) {
+    btn[i].classList.remove("button-carousel-yellow");
+  }
+  btn[n].className +=  " button-carousel-yellow";
+
+  swiper.slideTo(n);
+    btn[n].classList.add("button-carousel-yellow");
+    var paginationBullets = document.querySelectorAll(".swiper-pagination-bullet");
+paginationBullets.forEach(function (bullet, index) {
+    bullet.addEventListener("click", function () {
+        showDivs(index);
+    });
+});
+} 
+
+</script>
+ 
+</head>
+
+<body class="bg-black container">
+    
+    <div class="container1" style="margin-left: 10%; margin-right: 10%; justify-content: space-betwen" >
+        <div style="display:flex ;">
+            <object data="logo.svg" type="image/svg+xml"></object>
+
+            <span class="title" style="display: flex;">Hisutu</span>
+        </div>
+
+        <div class="buttonWrapper">
+            <button class="headButton">
+                Send a message
+            </button>
+            <button class="headButton yellow">
+                Join the alpha
+            </button>
+        </div>
+    </div>
+    <style>
+
+
+        .smallTitle {
+            display: block;
+        }
+
+        .textTitle,
+        .headButton {
+            display: block;
+            /* This makes the elements behave like block-level elements, causing a line break after each one */
+            margin-bottom: 0.1em;
+            /* This adds some space below each element */
+        }
+
+        .textTitle {
+            margin-bottom: 2em;
+            /* Adjusts the spacing for the textTitle specifically */
+        }
+    </style>
+    <div id="analytics">
+        <text class="bigTitle">
+            Analytics
+        </text>
+        <span class="smallTitle">
+            For your users
+        </span>
+        <span style="margin-top: 4%;" class="textTitle">
+            Hisutu <span style="color:#F4FF81">simplifies</span> data collection and presentation<br> so you can deliver
+            <span style="color:#81F5FF">faster</span> embedded insights.
+        </span>
+        <button class="headButton yellow" style="margin-left: 0px;">
+            Join the alpha
+        </button>
+    </div>
+
+    <div class="swiper mySwiper">
+
+
+        
+        <div id="button-companies" class="font-['SF Pro'] bg-yellow-200  bg-opacity-10 rounded-[100px] justify-center items-start inline-flex">
+            <a data-slide="0" class="button-carousel-yellow button-carousel button-carousel-0" onclick="showDivs(0)">
+                <p>Dev Tool Companies</p>
+            </a>
+            <a data-slide="1" class="button-carousel button-carousel-1" onclick="showDivs(1)">
+                <p>SaaS Companies</p>
+            </a>
+            <a data-slide="2" class="button-carousel button-carousel-2" onclick="showDivs(2)">
+                <p>Every Companies</p>
+            </a>
+        </div>
+
+
+        <div class="swiper-wrapper">
+
+
+        
+            <div class="swiper-slide slide-1">
+              <div class="w-[443px] flex-col justify-start items-start gap-10 inline-flex mr-10">
+                  <div class="self-stretch text-yellow-200 text-3xl font-['SF Pro']">Powerful aggregation capability</div>
+                  <div class="self-stretch h-[148px] flex-col justify-start items-start gap-5 flex">
+                      <div class="self-stretch text-stone-300 text-xl font-['SF Pro']">Use Case: Github Action Observability</div>
+                      <div class="self-stretch h-[104px] flex-col justify-start items-start gap-2 flex">
+                          <div class="self-stretch text-neutral-100 text-xl font-normal font-['SF Pro']">Design a dashboard to track the usage and performance of GitHub Action workflows.</div>
+                          <div class="self-stretch text-neutral-100 text-xl font-normal font-['SF Pro']">With Hisutu, effortlessly determine success rates, average latency, and more.</div>
+                      </div>
+                  </div>
+                  <div id="alpha" class="px-6 py-4 rounded-[100px] border border-neutral-100 justify-start items-start gap-2 inline-flex">
+                      <div class="text-neutral-100 text-xl font-normal font-['SF Pro']">Join the Alpha</div>
+                  </div>
+              </div>
+              <div id="imageslide" class="w-[425px] h-[325px] rounded-[26px] border border-neutral-100"></div>
+            </div>
+      
+            <div class="swiper-slide slide-2">
+              <div class="w-[443px] flex-col justify-start items-start gap-10 inline-flex mr-10">
+                  <div class="self-stretch text-yellow-200 text-3xl font-['SF Pro']">Powerful aggregation capability</div>
+                  <div class="self-stretch h-[148px] flex-col justify-start items-start gap-5 flex">
+                      <div class="self-stretch text-stone-300 text-xl font-['SF Pro']">Use Case: Descript Share Page View Count</div>
+                      <div class="self-stretch h-[104px] flex-col justify-start items-start gap-2 flex">
+                          <div class="self-stretch text-neutral-100 text-xl font-normal font-['SF Pro']">Offer the ability to see a simple view count for all shared pages on Descript.</div>
+                          <div class="self-stretch text-neutral-100 text-xl font-normal font-['SF Pro']">Utilizing Hisutu's idempotency feature, count only unique viewers for accurate data.</div>
+                      </div>
+                  </div>
+                  <div id="alpha" class="px-6 py-4 rounded-[100px] border border-neutral-100 justify-start items-start gap-2 inline-flex">
+                      <div class="text-neutral-100 text-xl font-normal font-['SF Pro']">Join the Alpha</div>
+                  </div>
+              </div>
+              <div id="imageslide"  class="w-[425px] h-[325px] rounded-[26px] border border-neutral-100"></div>
+            </div>
+      
+      
+            <div class="swiper-slide slide-3">
+              <div class="w-[443px] flex-col justify-start items-start gap-10 inline-flex mr-10">
+                  <div class="self-stretch text-yellow-200 text-3xl font-['SF Pro']">Powerful aggregation capability</div>
+                  <div class="self-stretch h-[148px] flex-col justify-start items-start gap-5 flex">
+                      <div class="self-stretch text-stone-300 text-xl font-['SF Pro']">Use Case: Ubisoft Internal Data Platform for Game Analytics</div>
+                      <div class="self-stretch h-[104px] flex-col justify-start items-start gap-2 flex">
+                          <div class="self-stretch text-neutral-100 text-xl font-normal font-['SF Pro']">Track daily, monthly, and lifetime unique players for a game.</div>
+                          <div class="self-stretch text-neutral-100 text-xl font-normal font-['SF Pro']">With Hisutu's metric intervals, set a single event and aggregate it across multiple time periods for multi-temporal metrics.</div>
+                      </div>
+                  </div>
+                  <div id="alpha" class="px-6 py-4 rounded-[100px] border border-neutral-100 justify-center items-center gap-2 flex">
+                      <div class="text-neutral-100 text-xl font-normal font-['SF Pro']">Join the Alpha</div>
+                  </div>
+              </div>
+              <div id="imageslide" class="w-[425px] h-[325px] rounded-[26px] border border-neutral-100"></div>
+            </div>
+      
+      
+        </div>
+        <div class="swiper-pagination"></div>
+
+        </div>
+    <div class="container1" style="flex-direction: column; justify-content: center; margin-top: 12%;">
+        
+        <text class="works">How it <span style="color:#F4FF81">Works</span> ?</text>
+        <div id="worksID">
+           
+            <text class="example">
+                <span style="color: var(--Grey, #C0C0C0);">Example:</span> Creating a Dashboard Showing API Request by
+                Language
+            </text>
+
+        </div>
+        <div style="padding:4%;
+        padding-bottom: 3%;
+        margin-top: 3%;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+        border-radius: 26px;
+border: 1px solid var(--White, #F5F5F5);">
+            <object style="width: 90%" data="graph.svg" type="image/svg+xml"></object>
+        </div>
+
+
+        <div style="width: 70%; margin-top: 8%;">
+            <div class="tuto">
+                <object data="icon.svg" type="image/svg+xml"></object>
+
+
+                <span class="tuto-text">Define the Metric</span>
+            </div>
+            <div style=" margin-top: 6%;
+            font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+            color: #F5F5F5;
+                    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                  
+                     ">
+
+
+                <text>Use the Hisutu Dashboard (or the SDK) to define the metric.</text>
+
+                <div style="margin-top: 6%; border-radius: 20px;
+                border: 1px solid var(--White, #F5F5F5);padding: 16px 24px;
+align-items: flex-start;
+gap: 10px;
+width: 100%;
+align-self: stretch;">
+                    <span style="font-weight: bold;">Metric = “api_request” </span>
+
+                </div>
+                <div style="margin-top: 4%; border-radius: 20px;
+                border: 1px solid var(--White, #F5F5F5);padding: 16px 24px;
+align-items: flex-start;
+gap: 10px;
+width: 100%;
+align-self: stretch;">
+                    <span style="font-weight: bold;">Type = “counter”</span><br><br>
+                    <span style="color:#C0C0C0">It represents a counter which will grow other the interval.</span>
+                </div>
+                <div style="margin-top: 3%; border-radius: 20px;
+                border: 1px solid var(--White, #F5F5F5);padding: 16px 24px;
+align-items: flex-start;
+gap: 10px;
+width: 100%;
+align-self: stretch;">
+                    <span style="font-weight: bold;">Interval = “minute”</span><br><br>
+                    <span style="color:#C0C0C0">The recommended frequency to get precise data.</span>
+                </div>
+                <div style="margin-top: 3%; border-radius: 20px;
+                border: 1px solid var(--White, #F5F5F5);padding: 16px 24px;
+align-items: flex-start;
+gap: 10px;
+width: 100%;
+align-self: stretch;">
+                    <span style="font-weight: bold;">Retention = 30d</span><br><br>
+                    <span style="color:#C0C0C0">For how long to keep the data</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="width: 70%; margin-top: 8%;">
+            <div class="tuto">
+                <object data="Flask.svg" type="image/svg+xml"></object>
+
+
+                <span class="tuto-text">Ingest the data</span>
+            </div>
+            <div
+            style="margin-top: 6%; border-radius: 20px;
+            border: 1px solid var(--White, #F5F5F5);padding: 16px 24px;
+align-items: flex-start;
+gap: 10px;
+width: 100%;
+align-self: stretch">
+
+
+                <object style="width: 100%;" data="code7.svg" type="image/svg+xml"></object>
+            </div>
+</div>
+
+            <div style="width: 70%; margin-top: 8%; ">
+                <div class="tuto">
+                    <object data="camembert.svg" type="image/svg+xml"></object>
+
+
+                    <span class="tuto-text">Query/Expose the data to your user</span>
+                </div>
+                <div
+                style="margin-top: 6%; border-radius: 20px;
+                border: 1px solid var(--White, #F5F5F5);padding: 16px 24px;
+align-items: flex-start;
+gap: 10px;
+width: 100%;
+align-self: stretch">
+
+
+
+                    <object style="width: 100%;" data="codequery.svg" type="image/svg+xml"></object>
+
+                </div>
+
+            </div>
+
+
+            <div style=" width: 70%; margin-top: 8%; ">
+                <div class="tuto">
+                    <object data="poney.svg" type="image/svg+xml"></object>
+
+
+                    <span class="tuto-text">Relax</span>
+                </div>
+                <div style=" margin-top: 6%; font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                align-items: flex-start;
+                width: 100%;
+                justify-content: center;
+                color: #F5F5F5;
+                        font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                      
+                         ">
+
+
+
+
+
+
+                    <text>Congrats! You just delivered a highly requested feature in a few minutes.</text>
+                    <object style="margin-top: 12%;margin-left: 12%; width: 80%;" data="dashboard.svg" type="image/svg+xml"></object>
+
+                    <object style="margin-left:-4%;margin-top:-48%;width: 120%;" data="confetti.svg"
+                        type="image/svg+xml"></object>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="buttonWrapper" style="justify-content: center; margin-top: 100px;">
+        <button class="headButton">
+            Send a message
+        </button>
+        <button class="headButton yellow">
+            Join the alpha
+        </button>
+    </div>
+    <div class="buttonWrapper" style="margin-top:2%;justify-content:  center;">
+        <div style="margin-top: 102px; margin-bottom: 30px;
+        color: #F5F5F5;
+    font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+">
+            @ 2023 Hisutu
+        </div>
+    </div>
+
+
+    </div>
+     <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function ( index, className) {
+          return '<span class="' + className + ' data-index=' + index +'">' + ("") + "</span>";
+        },
+      },
+      speed: 1300,
+    });
+
+  </script>
+</body>
+
+</html>
